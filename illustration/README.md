@@ -1,0 +1,1 @@
+Vector artwork and illustrations
