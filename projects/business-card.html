@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Business card and visual identity design project.">
+  <title>Business Card | Creative Portfolio</title>
+  <style>
+    :root {
+      --purple: #3b096d;
+      --light: #f4eef9;
+      --ink: #241b2f;
+      --muted: #706579;
+      --border: #e8dfef;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fcfbfd;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--purple); }
+
+    .container {
+      width: min(900px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header a {
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      background: var(--light);
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      color: var(--purple);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    h2 { color: var(--purple); }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    main { padding: 38px 0 70px; }
+
+    .preview {
+      display: grid;
+      min-height: 260px;
+      margin-bottom: 36px;
+      padding: 28px;
+      place-items: center;
+      border: 1px dashed #c9b6dc;
+      border-radius: 14px;
+      background: white;
+      text-align: center;
+    }
+
+    .preview strong {
+      display: block;
+      color: var(--purple);
+      font-size: 1.2rem;
+    }
+
+    .preview p {
+      max-width: 430px;
+      color: var(--muted);
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .detail {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .detail h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .details { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html">← Creative Portfolio</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Project 02 · Branding</span>
+      <h1>Business Card</h1>
+      <p class="intro">
+        A fictional brand concept exploring visual identity,
+        typography and professional print design.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="preview" aria-label="Business card preview placeholder">
+      <div>
+        <strong>Business card preview coming soon</strong>
+        <p>
+          The original design will be displayed here when
+          the artwork preview is available.
+        </p>
+      </div>
+    </section>
+
+    <section class="details">
+      <article class="detail">
+        <h2>Project overview</h2>
+        <p>
+          A practice project exploring how a visual identity
+          can be applied to a compact, professional business card.
+        </p>
+      </article>
+
+      <article class="detail">
+        <h2>Design focus</h2>
+        <p>
+          Typography, alignment, contrast, hierarchy
+          and consistent brand presentation.
+        </p>
+      </article>
+
+      <article class="detail">
+        <h2>Deliverable</h2>
+        <p>Business card design concept for print.</p>
+      </article>
+
+      <article class="detail">
+        <h2>Project status</h2>
+        <p>
+          Portfolio page prepared. Original design previews
+          will be added when available.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="../index.html#projects">← Back to all projects</a>
+    </div>
+  </footer>
+</body>
+</html>
