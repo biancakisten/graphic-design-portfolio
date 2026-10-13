@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Explore a creative portfolio of graphic design, branding, editorial layouts, promotional campaigns and poster design."
+  >
+  <meta name="theme-color" content="#3b096d">
+  <title>Creative Portfolio | Graphic Design</title>
+
+  <style>
+    :root {
+      --purple: #3b096d;
+      --purple-light: #f3edf8;
+      --ink: #241b2f;
+      --muted: #716778;
+      --background: #fcfbfd;
+      --border: #e9e2ef;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #a879d1;
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--purple);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: var(--purple);
+    }
+
+    .hero {
+      padding: 92px 0 76px;
+      background:
+        radial-gradient(
+          ellipse at 90% 10%,
+          #eee2f8 0,
+          transparent 38%
+        ),
+        var(--background);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--purple);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0;
+      color: var(--purple);
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.065em;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 26px 0 30px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid var(--purple);
+      border-radius: 8px;
+      background: var(--purple);
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 160ms ease;
+    }
+
+    .button:hover {
+      background: #542080;
+    }
+
+    .section {
+      padding: 64px 0 82px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--purple);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 410px;
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      min-height: 260px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #cdb8e1;
+      box-shadow: 0 12px 32px rgb(59 9 109 / 7%);
+    }
+
+    .project-number {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 24px;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .project-card p {
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--purple);
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .about {
+      padding: 54px 0;
+      background: var(--purple-light);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 42px;
+    }
+
+    .about h2 {
+      margin: 0;
+      color: var(--purple);
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .about p {
+      margin: 0;
+      color: #594c63;
+    }
+
+    .site-footer {
+      padding: 28px 0;
+      background: var(--white);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner a {
+      color: var(--purple);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, 1100px);
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .hero {
+        padding: 66px 0 54px;
+      }
+
+      .section {
+        padding: 48px 0 58px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .project-grid,
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: 230px;
+        padding: 24px;
+      }
+
+      .about-inner {
+        gap: 16px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">Creative Portfolio.</a>
+      <a class="nav-link" href="#projects">Explore projects ↘</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Graphic design · Visual communication</span>
+        <h1>Creative ideas.<br>Thoughtful design.</h1>
+        <p>
+          A collection of design projects exploring branding,
+          editorial layouts, promotional campaigns and visual storytelling.
+          Each project is an opportunity to communicate ideas with clarity
+          and creativity.
+        </p>
+        <a class="button" href="#projects">Explore my work &nbsp; ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Selected work</span>
+            <h2>Featured projects</h2>
+          </div>
+          <p>
+            Explore the concepts, layouts and design decisions
+            behind each project.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">01</span>
+            <h3>Promotional Brochure</h3>
+            <p>
+              An editorial design project focused on page layout,
+              typography and promotional communication.
+            </p>
+            <a class="project-link"
+               href="editorial/brochure-design/README.md">
+              Explore brochure project →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">02</span>
+            <h3>Business Card</h3>
+            <p>
+              A fictional brand concept exploring visual identity,
+              hierarchy and print design.
+            </p>
+            <a class="project-link"
+               href="branding/business-card/README.md">
+              Explore branding project →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">03</span>
+            <h3>Flyer Design</h3>
+            <p>
+              A promotional design exercise exploring composition,
+              messaging and visual impact.
+            </p>
+            <a class="project-link"
+               href="campaigns/flyer-design/README.md">
+              Explore flyer project →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">04</span>
+            <h3>Movie Poster</h3>
+            <p>
+              A fictional movie-poster concept focused on atmosphere,
+              visual storytelling and composition.
+            </p>
+            <a class="project-link"
+               href="campaigns/movie-poster/README.md">
+              Explore poster project →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container about-inner">
+        <h2>Design with purpose.</h2>
+        <p>
+          This portfolio brings together creative experiments and design work
+          across different formats. More projects will be added as the
+          collection grows, including illustration, vector artwork,
+          packaging and social media design.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Creative Portfolio</p>
+      <a href="#projects">Back to projects ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
