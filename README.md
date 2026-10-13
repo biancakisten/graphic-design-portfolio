@@ -1,38 +1,54 @@
 # Graphic Design Portfolio
 
-Welcome to my graphic design portfolio! This repository showcases a selection of my creative work, design projects and visual experiments across digital and print media.
+Welcome to my graphic design portfolio. This repository showcases my creative work across print design, branding, promotional materials and visual storytelling.
 
-## About My Work
+My portfolio brings together design projects that explore typography, layout, composition, visual hierarchy and effective communication.
 
-I enjoy creating visual designs that communicate ideas clearly, connect with audiences and bring brands to life. My work includes branding, editorial design, promotional graphics, illustration and packaging.
+## Portfolio Projects
 
-## Portfolio Categories
+### 1. Promotional Brochure
 
-### Logo Design & Branding
-Visual identities, logo concepts, brand elements and supporting graphics.
+A promotional brochure design project focused on visual hierarchy, editorial layout, typography and presenting information clearly.
 
-### Editorial Design
-Brochures, magazines, publications and page layouts created using Adobe InDesign.
+[View Brochure Project](editorial/brochure-design/README.md)
 
-### Posters, Flyers & Social Media
-Promotional materials, campaign graphics, posters and digital content.
+### 2. Business Card Design
 
-### Illustration & Vector Artwork
-Vector illustrations, original artwork and creative compositions.
+A business card concept for a fictional brand, exploring professional presentation, typography and visual identity.
 
-### Packaging & Product Design
-Packaging concepts, product visuals and presentation mockups.
+[View Business Card Project](branding/business-card/README.md)
 
-## Design Tools
+### 3. Flyer Design
 
-- Adobe Illustrator
+A graphic design practice project exploring promotional communication, composition and attention-grabbing visual layouts.
+
+[View Flyer Project](campaigns/flyer-design/README.md)
+
+### 4. Fictional Movie Poster
+
+A cinematic poster concept for a fictional movie, exploring image composition, typography, atmosphere and visual storytelling.
+
+[View Movie Poster Project](campaigns/movie-poster/README.md)
+
+## Design Skills
+
+- Editorial and print design
+- Typography and layout
+- Branding and visual identity
+- Promotional graphic design
+- Poster design and visual storytelling
+- Digital composition
+
+## Design Software
+
 - Adobe InDesign
+- Adobe Illustrator
 - Adobe Photoshop
 
-## Selected Projects
+## About This Portfolio
 
-Project showcases and case studies will be added to this repository as the portfolio develops.
+This portfolio is a growing collection of graphic design projects. Additional work, design previews and project details will be added as the portfolio develops.
 
 ## Contact
 
-For design enquiries, collaborations or freelance opportunities, please get in touch through my professional contact channels.
+For design enquiries, collaborations and freelance opportunities, please get in touch through my professional contact channels.
