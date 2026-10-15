@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#642C3A">
   <meta name="description" content="Explore a creative portfolio of graphic design, branding, print layouts, promotional artwork and illustration.">
-  <title>Creative Portfolio | Graphic Design</title>
+  <title>Atelier | Graphic Design Portfolio</title>
 
   <style>
     :root {
@@ -19,6 +19,7 @@
       --white: var(--cream);
       --line: var(--blush);
       --radius: 16px;
+      --header-height: 79px;
     }
 
     * {
@@ -71,11 +72,11 @@
     }
 
     .brand {
-      color: var(--burgundy);
       font-size: 1.15rem;
       font-weight: 800;
       text-decoration: none;
       letter-spacing: -0.04em;
+      transition: color 180ms ease;
     }
 
     .nav-links {
@@ -88,18 +89,36 @@
       text-decoration: none;
       font-size: 0.92rem;
       font-weight: 600;
+      transition: color 180ms ease;
     }
 
-    .nav-links a:hover,
+    .site-header .brand:link,
+    .site-header .brand:visited,
+    .site-header .nav-links a:link,
+    .site-header .nav-links a:visited {
+      color: var(--burgundy);
+    }
+
+    .site-header .brand:hover,
+    .site-header .brand:active,
+    .site-header .nav-links a:hover,
+    .site-header .nav-links a:active {
+      color: #000000;
+    }
+
     .text-link:hover {
       color: var(--burgundy);
     }
 
     .hero {
+      display: flex;
+      align-items: center;
+      min-height: calc(100vh - var(--header-height));
+      min-height: calc(100svh - var(--header-height));
       padding: 100px 0 90px;
       background: var(--burgundy);
       color: var(--white);
-      overflow: hidden;
+      overflow-x: clip;
     }
 
     .hero-inner {
@@ -131,6 +150,14 @@
       font-size: clamp(3rem, 7vw, 5.8rem);
       line-height: 0.99;
       letter-spacing: -0.07em;
+    }
+
+    .hero-title-line {
+      display: block;
+    }
+
+    .hero-title-line:first-child {
+      white-space: nowrap;
     }
 
     .hero-title-character {
@@ -177,6 +204,28 @@
       background: var(--blush);
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero .button-primary {
+      background: var(--cream);
+      color: var(--burgundy);
+    }
+
+    .hero .button-secondary {
+      border-color: var(--cream);
+      background: transparent;
+      color: var(--cream);
+    }
+
+    .hero .button-secondary:hover {
+      background: var(--cream);
+      color: var(--burgundy);
+    }
+
     .hero-art {
       min-height: 300px;
       position: relative;
@@ -206,6 +255,7 @@
     }
 
     .art-card strong {
+      color: #FFFFFF;
       font-size: 2.6rem;
       line-height: 0.95;
       letter-spacing: -0.07em;
@@ -267,11 +317,10 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--white);
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      transition: box-shadow 180ms ease;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
       box-shadow: 0 16px 35px #642C3A0E;
     }
 
@@ -281,7 +330,7 @@
       min-height: 280px;
       padding: 20px;
       overflow: hidden;
-      background: var(--cream);
+      background: var(--blush);
     }
 
     .project-image img {
@@ -291,16 +340,9 @@
       transition: transform 180ms ease;
     }
 
-    .project-card:hover .project-image img {
+    .project-card:hover .project-image img,
+    .project-card:focus-within .project-image img {
       transform: scale(1.02);
-    }
-
-    .project-image.poster {
-      background: var(--burgundy);
-    }
-
-    .project-image.business-card {
-      background: var(--blush);
     }
 
     .project-info {
@@ -444,6 +486,10 @@
     }
 
     @media (max-width: 760px) {
+      :root {
+        --header-height: 84px;
+      }
+
       .nav {
         min-height: 68px;
         align-items: flex-start;
@@ -518,9 +564,25 @@
       }
     }
 
+    @media (max-width: 380px) {
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+
+      .project-card:hover .project-image img,
+      .project-card:focus-within .project-image img {
+        transform: none;
       }
 
       *,
@@ -535,7 +597,7 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home">Creative Portfolio</a>
+      <a class="brand" href="#home">Atelier.</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
@@ -550,19 +612,21 @@
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">Graphic design · Branding · Print</p>
-          <h1 id="hero-title" aria-label="Ideas made visible.">Ideas made visible.</h1>
+          <h1 id="hero-title" aria-label="Ideas made visible."><span class="hero-title-line">Ideas made</span><span class="hero-title-line">visible.</span></h1>
           <p class="hero-copy">
-            A creative portfolio showcasing visual identities, print designs,
-            editorial layouts and artwork made to communicate with purpose.
+            Visual identities, print and creative concepts — designed with intention, shaped by curiosity and brought to life through detail.
           </p>
-          <a class="button" href="#work">Explore my work</a>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my work</a>
+            <a class="button button-secondary" href="#contact">Let's collaborate</a>
+          </div>
         </div>
 
         <div class="hero-art" aria-label="Abstract portfolio artwork">
           <div class="art-card-back"></div>
           <div class="art-card">
             <span>SELECTED CREATIVE WORK</span>
-            <strong>Ideas<br>into<br>impact.</strong>
+      <strong>Creativity, with purpose.</strong>
             <span>DESIGN PORTFOLIO</span>
           </div>
         </div>
@@ -573,9 +637,8 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow" style="color:var(--burgundy);">Selected projects</p>
-            <h2>A few things I've made.</h2>
-            <p>Explore a selection of branding, print and visual design projects.</p>
+            <h2>Where ideas take shape.</h2>
+            <p>Discover a growing collection of designs where colour, typography and ideas come together to create something memorable.</p>
           </div>
         </div>
 
@@ -594,7 +657,7 @@
               <div class="project-category">Editorial design</div>
               <h3>Fred's Coffee — Brochure</h3>
               <p>A three-page coffee brochure with a photographic cover, editorial content and brand details.</p>
-              <a class="project-link" href="projects/brochure.html">View project ↗</a>
+              <a class="project-link" href="projects/brochure.html">View Project</a>
             </div>
           </article>
 
@@ -612,7 +675,7 @@
               <div class="project-category">Brand collateral</div>
               <h3>Fred's Coffee — Business Card</h3>
               <p>A coordinated business card design featuring the brand logo and contact information.</p>
-              <a class="project-link" href="projects/business-card.html">View project ↗</a>
+              <a class="project-link" href="projects/business-card.html">View Project</a>
             </div>
           </article>
 
@@ -630,7 +693,7 @@
               <div class="project-category">Promotional design</div>
               <h3>Fred's Coffee — Flyer</h3>
               <p>A promotional flyer highlighting the coffee shop's offerings, opening hours and contact details.</p>
-              <a class="project-link" href="projects/flyer.html">View project ↗</a>
+              <a class="project-link" href="projects/flyer.html">View Project</a>
             </div>
           </article>
 
@@ -648,7 +711,7 @@
               <div class="project-category">Poster design</div>
               <h3>The Archive 2</h3>
               <p>A cinematic poster concept using atmosphere, typography and dramatic visual storytelling.</p>
-              <a class="project-link" href="projects/movie-poster.html">View project ↗</a>
+              <a class="project-link" href="projects/movie-poster.html">View Project</a>
             </div>
           </article>
         </div>
@@ -658,21 +721,12 @@
     <section class="section about" id="about">
       <div class="container about-inner">
         <div>
-          <p class="about-label">A little about this portfolio</p>
-          <h2>Design with intention.</h2>
+          <h2>Curiosity is where creativity begins.</h2>
         </div>
         <div>
-          <p>
-            Good design is more than making something look attractive.
-            It's about creating a clear message, choosing the right visual
-            language and making every element work together.
-          </p>
-          <p>
-            This portfolio brings together creative experiments and design
-            projects across branding, print, editorial layouts and promotional
-            artwork. Each project is an opportunity to explore ideas and turn
-            them into a visual experience.
-          </p>
+          <p>I see design as more than what meets the eye. It's the feeling a colour creates, the story a layout tells, and the little details that turn an ordinary idea into something unforgettable.</p>
+          <p>From bold visual identities to beautifully crafted print, I bring ideas to life through thoughtful typography, considered composition and a love for the creative process.</p>
+          <p>I'm always exploring, experimenting and pushing my creativity further — one idea, one detail and one design at a time.</p>
         </div>
       </div>
     </section>
@@ -681,7 +735,6 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow" style="color:var(--burgundy);">What I create</p>
             <h2>Design services</h2>
             <p>Visual design for brands, businesses and creative projects.</p>
           </div>
@@ -714,15 +767,15 @@
           <h2>Let's create something memorable.</h2>
           <p>Get in touch to discuss a design idea, creative project or collaboration.</p>
         </div>
-        <a class="button" href="mailto:bianca.kisten@pixelpals.co.za?subject=Graphic%20Design%20Enquiry">Contact me ↗</a>
+        <a class="button" href="mailto:bianca.kisten@pixelpals.co.za?subject=Graphic%20Design%20Enquiry">Contact Me</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Creative Portfolio. All rights reserved.</p>
-      <a href="#home">Back to top ↑</a>
+      <p>© <span id="year"></span> Atelier. All rights reserved.</p>
+      <a href="#home">Back to top</a>
     </div>
   </footer>
 
@@ -733,7 +786,7 @@
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (heroTitle && !reducedMotion) {
-      const title = heroTitle.textContent;
+      const title = heroTitle.getAttribute("aria-label") || heroTitle.textContent;
       const characters = Array.from(title, (character) => {
         const span = document.createElement("span");
         span.className = "hero-title-character";
@@ -745,8 +798,14 @@
       const cursor = document.createElement("span");
       cursor.className = "hero-title-cursor";
       cursor.setAttribute("aria-hidden", "true");
-      heroTitle.appendChild(cursor);
-      heroTitle.replaceChildren(...characters, cursor);
+      const secondLineStart = title.indexOf(" visible.") + 1;
+      const firstLine = document.createElement("span");
+      firstLine.className = "hero-title-line";
+      firstLine.append(...characters.slice(0, secondLineStart));
+      const secondLine = document.createElement("span");
+      secondLine.className = "hero-title-line";
+      secondLine.append(...characters.slice(secondLineStart));
+      heroTitle.replaceChildren(firstLine, secondLine, cursor);
 
       let index = 0;
       const typeNextCharacter = () => {
@@ -758,7 +817,7 @@
         const character = characters[index++];
         character.style.visibility = "visible";
         character.after(cursor);
-        const delay = title.slice(0, index).endsWith("made ") ? 400 : 120;
+        const delay = title.slice(0, index).endsWith("made ") ? 500 : 150;
         window.setTimeout(typeNextCharacter, delay);
       };
 
