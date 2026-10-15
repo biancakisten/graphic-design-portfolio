@@ -8,11 +8,12 @@
   <title>Promotional Brochure | Creative Portfolio</title>
   <style>
     :root {
-      --purple: #3b096d;
-      --light: #f4eef9;
-      --ink: #241b2f;
-      --muted: #706579;
-      --border: #e8dfef;
+      --burgundy: #642C3A;
+      --cream: #F5E8E5;
+      --blush: #D9A3A8;
+      --ink: #342329;
+      --muted: var(--ink);
+      --border: var(--blush);
     }
 
     * { box-sizing: border-box; }
@@ -20,12 +21,20 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: #fcfbfd;
+      background: var(--cream);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
     }
 
-    a { color: var(--purple); }
+    a { color: var(--burgundy); }
+
+    a:hover { text-decoration-color: var(--blush); }
+
+    a:focus-visible {
+      outline: 3px solid var(--burgundy);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px var(--cream);
+    }
 
     .container {
       width: min(900px, calc(100% - 40px));
@@ -34,7 +43,7 @@
 
     header {
       padding: 22px 0;
-      background: white;
+      background: var(--cream);
       border-bottom: 1px solid var(--border);
     }
 
@@ -45,11 +54,11 @@
 
     .hero {
       padding: 72px 0 48px;
-      background: var(--light);
+      background: var(--cream);
     }
 
     .eyebrow {
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.13em;
@@ -58,13 +67,13 @@
 
     h1 {
       margin: 12px 0;
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: clamp(2.5rem, 7vw, 4.5rem);
       line-height: 1.08;
       letter-spacing: -0.05em;
     }
 
-    h2 { color: var(--purple); }
+    h2 { color: var(--burgundy); }
 
     .intro {
       max-width: 680px;
@@ -80,15 +89,15 @@
       margin: 0 0 36px;
       padding: 28px;
       place-items: center;
-      border: 1px dashed #c9b6dc;
+      border: 1px dashed var(--blush);
       border-radius: 14px;
-      background: white;
+      background: var(--cream);
       text-align: center;
     }
 
     .preview strong {
       display: block;
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: 1.2rem;
     }
 
@@ -107,7 +116,7 @@
       padding: 22px;
       border: 1px solid var(--border);
       border-radius: 12px;
-      background: white;
+      background: var(--cream);
     }
 
     .detail h2 {

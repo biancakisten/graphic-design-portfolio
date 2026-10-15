@@ -4,19 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#3b096d">
+  <meta name="theme-color" content="#642C3A">
   <meta name="description" content="Explore a creative portfolio of graphic design, branding, print layouts, promotional artwork and illustration.">
   <title>Creative Portfolio | Graphic Design</title>
 
   <style>
     :root {
-      --purple: #3b096d;
-      --purple-light: #eee6f7;
-      --ink: #20172a;
-      --muted: #706879;
-      --paper: #fbf9fc;
-      --white: #ffffff;
-      --line: #e8e1ed;
+      --burgundy: #642C3A;
+      --cream: #F5E8E5;
+      --blush: #D9A3A8;
+      --ink: #342329;
+      --muted: var(--ink);
+      --paper: var(--cream);
+      --white: var(--cream);
+      --line: var(--blush);
       --radius: 16px;
     }
 
@@ -38,6 +39,12 @@
 
     a {
       color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--burgundy);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px var(--cream);
     }
 
     img {
@@ -64,7 +71,7 @@
     }
 
     .brand {
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: 1.15rem;
       font-weight: 800;
       text-decoration: none;
@@ -85,12 +92,12 @@
 
     .nav-links a:hover,
     .text-link:hover {
-      color: var(--purple);
+      color: var(--burgundy);
     }
 
     .hero {
       padding: 100px 0 90px;
-      background: var(--purple);
+      background: var(--burgundy);
       color: var(--white);
       overflow: hidden;
     }
@@ -111,7 +118,7 @@
     }
 
     .hero .eyebrow {
-      color: #dbc4f4;
+      color: var(--cream);
     }
 
     h1, h2, h3, p {
@@ -126,10 +133,27 @@
       letter-spacing: -0.07em;
     }
 
+    .hero-title-character {
+      visibility: hidden;
+    }
+
+    .hero-title-cursor {
+      display: inline-block;
+      height: 0.9em;
+      margin-left: 0.08em;
+      border-right: 0.075em solid currentColor;
+      vertical-align: -0.05em;
+      animation: hero-cursor-blink 850ms steps(2, start) infinite;
+    }
+
+    @keyframes hero-cursor-blink {
+      to { visibility: hidden; }
+    }
+
     .hero-copy {
       max-width: 580px;
       margin-bottom: 30px;
-      color: #eee4f7;
+      color: var(--cream);
       font-size: 1.08rem;
     }
 
@@ -142,7 +166,7 @@
       border: 1px solid transparent;
       border-radius: 7px;
       background: var(--white);
-      color: var(--purple);
+      color: var(--burgundy);
       font-weight: 700;
       text-decoration: none;
       transition: transform 160ms ease, background 160ms ease;
@@ -150,7 +174,7 @@
 
     .button:hover {
       transform: translateY(-2px);
-      background: var(--purple-light);
+      background: var(--blush);
     }
 
     .hero-art {
@@ -167,17 +191,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: #e4c9f4;
-      color: var(--purple);
+      background: var(--blush);
+      color: var(--burgundy);
       transform: rotate(8deg);
-      box-shadow: 0 24px 65px #17032f55;
+      box-shadow: 0 24px 65px #642C3A55;
     }
 
     .art-card-back {
       position: absolute;
       width: 215px;
       aspect-ratio: 0.78;
-      background: #e8b18f;
+      background: var(--cream);
       transform: rotate(-9deg) translate(-32px, 8px);
     }
 
@@ -248,7 +272,7 @@
 
     .project-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 35px #2c12400e;
+      box-shadow: 0 16px 35px #642C3A0E;
     }
 
     .project-image {
@@ -257,7 +281,7 @@
       min-height: 280px;
       padding: 20px;
       overflow: hidden;
-      background: #f0e9f4;
+      background: var(--cream);
     }
 
     .project-image img {
@@ -272,11 +296,11 @@
     }
 
     .project-image.poster {
-      background: #171728;
+      background: var(--burgundy);
     }
 
     .project-image.business-card {
-      background: #f4e9df;
+      background: var(--blush);
     }
 
     .project-info {
@@ -285,7 +309,7 @@
 
     .project-category {
       margin-bottom: 8px;
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: 0.73rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -305,7 +329,7 @@
     }
 
     .project-link {
-      color: var(--purple);
+      color: var(--burgundy);
       font-weight: 700;
       text-decoration: none;
     }
@@ -324,7 +348,7 @@
     }
 
     .about-label {
-      color: var(--purple);
+      color: var(--burgundy);
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -352,7 +376,7 @@
     .service-number {
       display: inline-block;
       margin-bottom: 22px;
-      color: var(--purple);
+      color: var(--burgundy);
       font-size: 0.8rem;
       font-weight: 800;
     }
@@ -370,7 +394,7 @@
 
     .contact {
       padding: 76px 0;
-      background: var(--purple);
+      background: var(--burgundy);
       color: var(--white);
     }
 
@@ -382,13 +406,13 @@
     }
 
     .contact .eyebrow {
-      color: #dbc4f4;
+      color: var(--cream);
     }
 
     .contact p {
       max-width: 580px;
       margin-bottom: 0;
-      color: #eee4f7;
+      color: var(--cream);
     }
 
     .contact .button {
@@ -414,7 +438,7 @@
     }
 
     .site-footer a {
-      color: var(--purple);
+      color: var(--burgundy);
       font-weight: 700;
       text-decoration: none;
     }
@@ -526,12 +550,12 @@
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">Graphic design · Branding · Print</p>
-          <h1>Ideas made visible.</h1>
+          <h1 id="hero-title" aria-label="Ideas made visible.">Ideas made visible.</h1>
           <p class="hero-copy">
             A creative portfolio showcasing visual identities, print designs,
             editorial layouts and artwork made to communicate with purpose.
           </p>
-          <a class="button" href="#work">Explore my work ↓</a>
+          <a class="button" href="#work">Explore my work</a>
         </div>
 
         <div class="hero-art" aria-label="Abstract portfolio artwork">
@@ -549,7 +573,7 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow" style="color:var(--purple);">Selected projects</p>
+            <p class="eyebrow" style="color:var(--burgundy);">Selected projects</p>
             <h2>A few things I've made.</h2>
             <p>Explore a selection of branding, print and visual design projects.</p>
           </div>
@@ -657,7 +681,7 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow" style="color:var(--purple);">What I create</p>
+            <p class="eyebrow" style="color:var(--burgundy);">What I create</p>
             <h2>Design services</h2>
             <p>Visual design for brands, businesses and creative projects.</p>
           </div>
@@ -704,6 +728,42 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const heroTitle = document.getElementById("hero-title");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroTitle && !reducedMotion) {
+      const title = heroTitle.textContent;
+      const characters = Array.from(title, (character) => {
+        const span = document.createElement("span");
+        span.className = "hero-title-character";
+        span.setAttribute("aria-hidden", "true");
+        span.textContent = character;
+        heroTitle.appendChild(span);
+        return span;
+      });
+      const cursor = document.createElement("span");
+      cursor.className = "hero-title-cursor";
+      cursor.setAttribute("aria-hidden", "true");
+      heroTitle.appendChild(cursor);
+      heroTitle.replaceChildren(...characters, cursor);
+
+      let index = 0;
+      const typeNextCharacter = () => {
+        if (index >= characters.length) {
+          cursor.remove();
+          return;
+        }
+
+        const character = characters[index++];
+        character.style.visibility = "visible";
+        character.after(cursor);
+        const delay = title.slice(0, index).endsWith("made ") ? 400 : 120;
+        window.setTimeout(typeNextCharacter, delay);
+      };
+
+      typeNextCharacter();
+    }
   </script>
 </body>
 </html>
