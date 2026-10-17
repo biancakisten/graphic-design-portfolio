@@ -307,12 +307,14 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .project-card {
       min-width: 0;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -327,7 +329,8 @@
     .project-image {
       display: grid;
       place-items: center;
-      min-height: 280px;
+      height: 250px;
+      flex: 0 0 250px;
       padding: 20px;
       overflow: hidden;
       background: var(--blush);
@@ -335,9 +338,57 @@
 
     .project-image img {
       width: 100%;
-      height: 320px;
+      height: 210px;
       object-fit: contain;
       transition: transform 180ms ease;
+    }
+
+    .brand-logo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+    }
+
+    .brand-logo-preview {
+      background: var(--white);
+      border-bottom: 1px dotted #D9A3A8;
+    }
+
+    .project-image-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .project-image-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 6px;
+      background: var(--cream);
+      object-fit: contain;
+    }
+
+    .category-art {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 10px;
+      color: var(--burgundy);
+      text-align: center;
+    }
+
+    .category-art strong {
+      font-size: 1.25rem;
+      letter-spacing: -0.04em;
+    }
+
+    .category-art span {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .project-card:hover .project-image img,
@@ -346,6 +397,9 @@
     }
 
     .project-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
       padding: 22px 24px 24px;
     }
 
@@ -372,6 +426,66 @@
 
     .project-link {
       color: var(--burgundy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 12px;
+      margin: 4px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-list li {
+      display: grid;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .project-list .project-list-project {
+      grid-template-columns: 112px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      margin-top: 2px;
+    }
+
+    .project-list-preview {
+      display: grid;
+      place-items: center;
+      height: 68px;
+      padding: 4px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .project-list-preview img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .project-list-project .project-category {
+      margin: 0 0 2px;
+      font-size: 0.67rem;
+    }
+
+    .project-list a {
+      color: var(--burgundy);
+      font-size: 0.95rem;
       font-weight: 700;
       text-decoration: none;
     }
@@ -541,16 +655,30 @@
       }
 
       .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
       }
 
       .project-image {
-        min-height: 230px;
+        height: 230px;
+        flex-basis: 230px;
       }
 
       .project-image img {
-        height: 280px;
+        height: 190px;
+      }
+
+      .brand-logo-preview img {
+        height: 100%;
+      }
+
+      .project-list .project-list-project {
+        grid-template-columns: 74px minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .project-list-preview {
+        height: 56px;
       }
 
       .services-grid {
@@ -561,6 +689,12 @@
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .project-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -644,74 +778,67 @@
 
         <div class="project-grid">
           <article class="project-card">
-            <a href="projects/brochure.html" aria-label="View Fred's Coffee brochure">
-              <div class="project-image">
-                <img
-                  src="freds-coffee-brochure-clean.jpg"
-                  alt="Fred's Coffee brochure cover with the slogan Sip Your Way to a Better Day"
-                  loading="lazy"
-                >
-              </div>
-            </a>
+            <div class="project-image project-image-grid" aria-label="Print project previews">
+              <img src="freds-coffee-brochure-clean.jpg" alt="Fred's Coffee brochure cover" loading="lazy">
+              <img src="freds-coffee-flyer-clean.jpg" alt="Fred's Coffee promotional flyer" loading="lazy">
+            </div>
             <div class="project-info">
-              <div class="project-category">Editorial design</div>
-              <h3>Fred's Coffee — Brochure</h3>
-              <p>A three-page coffee brochure with a photographic cover, editorial content and brand details.</p>
-              <a class="project-link" href="projects/brochure.html">View Project</a>
+              <div class="project-category">Selected projects</div>
+              <h3>Print Design</h3>
+              <ul class="project-list">
+                <li><a href="projects/brochure.html">Fred's Coffee — Brochure</a><span>A three-page coffee brochure with editorial content and brand details.</span></li>
+                <li><a href="projects/flyer.html">Fred's Coffee — Flyer</a><span>A promotional flyer highlighting the coffee shop's offerings and details.</span></li>
+                <li class="project-list-project">
+                  <a class="project-list-preview" href="projects/business-card.html" aria-label="View Fred's Coffee business card">
+                    <img src="assets/freds-coffee-business-card-back.png" alt="Fred's Coffee business card with updated gold crown logo, contact information and store address" loading="lazy">
+                  </a>
+                  <div>
+                    <div class="project-category">BRAND COLLATERAL</div>
+                    <a href="projects/business-card.html">Fred's Coffee — Business Card</a>
+                    <span>A coordinated business card design featuring Fred's Coffee's updated 3D crown logo, contact details and store address.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </article>
 
           <article class="project-card">
-            <a href="projects/business-card.html" aria-label="View Fred's Coffee business card">
-              <div class="project-image business-card">
-                <img
-                  src="freds-coffee-business-card-page-1.jpg"
-                  alt="Front of Fred's Coffee business card featuring its crown logo"
-                  loading="lazy"
-                >
-              </div>
-            </a>
-            <div class="project-info">
-              <div class="project-category">Brand collateral</div>
-              <h3>Fred's Coffee — Business Card</h3>
-              <p>A coordinated business card design featuring the brand logo and contact information.</p>
-              <a class="project-link" href="projects/business-card.html">View Project</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="projects/flyer.html" aria-label="View Fred's Coffee flyer">
-              <div class="project-image">
-                <img
-                  src="freds-coffee-flyer-clean.jpg"
-                  alt="Fred's Coffee promotional flyer with breakfast, coffee and opening hours"
-                  loading="lazy"
-                >
-              </div>
-            </a>
-            <div class="project-info">
-              <div class="project-category">Promotional design</div>
-              <h3>Fred's Coffee — Flyer</h3>
-              <p>A promotional flyer highlighting the coffee shop's offerings, opening hours and contact details.</p>
-              <a class="project-link" href="projects/flyer.html">View Project</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="projects/movie-poster.html" aria-label="View The Archive 2 movie poster">
+            <a href="projects/movie-poster.html" aria-label="View The Archive 2 poster">
               <div class="project-image poster">
                 <img
                   src="the-archive-2-preview.jpg"
-                  alt="The Archive 2 cinematic movie poster"
+                  alt="The Archive 2 cinematic poster"
                   loading="lazy"
                 >
               </div>
             </a>
             <div class="project-info">
-              <div class="project-category">Poster design</div>
-              <h3>The Archive 2</h3>
-              <p>A cinematic poster concept using atmosphere, typography and dramatic visual storytelling.</p>
-              <a class="project-link" href="projects/movie-poster.html">View Project</a>
+              <div class="project-category">Selected project</div>
+              <h3>Digital Design</h3>
+              <p>The Archive 2 — Poster: a cinematic digital composition using atmosphere, typography and visual storytelling.</p>
+              <div class="project-links">
+                <a class="project-link" href="projects/movie-poster.html">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="projects/business-card.html" aria-label="View Fred's Coffee logo and identity example">
+              <div class="project-image brand-logo-preview">
+                <img
+                  src="assets/freds-coffee-logo.svg"
+                  alt="Fred's Coffee 3D logo in metallic gold with the brand name"
+                  loading="lazy"
+                >
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-category">Logo design</div>
+              <h3>Brand Identity</h3>
+              <p>Fred's Coffee's 3D logo artwork. The repository has no separate logo project page, so this preview links to the existing business card project.</p>
+              <div class="project-links">
+                <a class="project-link" href="projects/business-card.html">View the logo on the business card</a>
+              </div>
             </div>
           </article>
         </div>
