@@ -117,7 +117,31 @@
       gap: 24px;
     }
 
-    .business-card-details { margin-top: 36px; }
+    .business-card-preview { margin: 36px 0; }
+
+    .business-card-artworks {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: 24px;
+    }
+
+    .business-card-artworks figure { margin: 0; }
+
+    .business-card-artworks img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 7px;
+    }
+
+    .business-card-artworks figcaption {
+      margin-top: 8px;
+      color: var(--burgundy);
+      font-weight: 800;
+      text-align: center;
+    }
 
     .detail {
       padding: 22px;
@@ -140,6 +164,7 @@
 
     @media (max-width: 600px) {
       .details { grid-template-columns: 1fr; }
+      .business-card-artworks { grid-template-columns: 1fr; }
       .hero { padding: 52px 0 36px; }
       main { padding: 28px 0 52px; }
       .logo-preview {
@@ -197,7 +222,26 @@
       </article>
     </section>
 
-    <section class="details business-card-details" aria-label="Fred's Coffee business card project information">
+    <section class="logo-preview business-card-preview" aria-label="Fred's Coffee business card artwork">
+      <div class="business-card-artworks">
+        <figure>
+          <img
+            src="../assets/freds-coffee-business-card-1.png"
+            alt="Front of the Fred's Coffee business card, featuring the gold crown and Fred's Coffee wordmark"
+          >
+          <figcaption>Front</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../assets/freds-coffee-business-card-2.png"
+            alt="Back of the Fred's Coffee business card, featuring the logo and business contact details"
+          >
+          <figcaption>Back</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="details" aria-label="Fred's Coffee business card project information">
       <article class="detail">
         <h2>Project overview</h2>
         <p>The project requires designing a professional business card for Fred's Coffee, using the coffee-shop branding developed in an earlier lesson. The design should communicate the business identity clearly while presenting essential contact information in an attractive and organised layout.</p>
